@@ -89,8 +89,6 @@ while not cursor == END_POS:
 
     # Read a byte from stdin & store in the cell
     elif instr == ',':
-        cells[pointer] = sys.stdin.read(1)
+        cells[pointer] = ord(input('')[0])
 
     cursor += 1
-
-print("\nExecution finished !")

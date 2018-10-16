@@ -1,5 +1,5 @@
 ################################
-# Program taken from wikipedia #
+# Program taken from Wikipedia #
 ################################
 
 [ This program prints "Hello World!" and a newline to the screen, its
