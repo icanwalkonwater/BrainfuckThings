@@ -23,7 +23,7 @@ C_REP_LOOP_START = 'while(*ptr){'
 C_REP_LOOP_END = '}'
 
 if len(sys.argv) != 2:
-    print("Usage: {} <file>", file=sys.stderr)
+    print("Usage: {} <file>".format(sys.argv[0]), file=sys.stderr)
     exit(1)
 
 c_code = ''

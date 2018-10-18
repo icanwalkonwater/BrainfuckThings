@@ -14,8 +14,13 @@ cursor = 0
 # Keep track of the start of the loops for faster jumps
 queue_jump = []
 
-# Read code from stdin & cleanup comments
-data = "".join(sys.stdin.readlines())
+if len(sys.argv) != 2:
+    print("Usage: {} <file>".format(sys.argv[0]), file=sys.stderr)
+    exit(1)
+
+# Read code from file & cleanup comments
+with open(sys.argv[1], 'r') as f:
+    data = ''.join(f.readlines())
 data = re.sub(r'[^+\-<>\[\].,]', '', data)
 
 END_POS = len(data)
@@ -91,6 +96,6 @@ while not cursor == END_POS:
 
     # Read a byte from stdin & store in the cell
     elif instr == ',':
-        cells[pointer] = ord(input('')[0])
+        cells[pointer] = ord(sys.stdin.read(1))
 
     cursor += 1
