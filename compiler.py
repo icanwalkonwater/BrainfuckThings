@@ -57,4 +57,6 @@ with open(c_file_path, 'w+') as f:
 
 code = call(['gcc', '-Wall', '-O3', '-o', out_name, c_file_path],
             stdout=sys.stdout, stderr=sys.stderr)
+os.remove(c_file_path)
+
 print('Compilation finished with exit code ' + str(code))
